@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+img{
+    width: 100%;
+}
+h2{
+    font-family: "Young Serif", serif;
+    font-size: 46px;
+    font-weight: 500;
+    text-align: center;
+    color: #FFF;
+    letter-spacing: 3px;
+}
+/* font-family: "Young Serif", serif; */
+body{
+    background: rgb(14, 14, 14);
+}
+.hero-section-wrapper{
+    padding: 0 20px;
+}
+.hero-section-container{
+    max-width: 1200px;
+    margin: 100px auto;
+}
+.hero-section-inner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hero-section-lhs{
+    max-width: 560px;
+}
+.available-tag{
+    padding: 8px 14px;
+    display: flex;
+    gap: 2px;
+    width: fit-content;
+    border-radius: 36px;
+    background: #141514;
+    border: 1px solid #232223;
+    margin-bottom: 30px;
+}
+.available-tag img{
+    display: inline;
+    width: 20px;
+}
+.available-tag p{
+    display: inline;
+    font-size: 12px;
+    line-height: 22px;
+    font-family: "Poppins", serif;
+}
+.hero-section-lhs h1{
+    font-size: 68px;
+    line-height: 84px;
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+}
+.color-1{
+    color: #b9935e;
+}
+.color-2{
+    color: #e09738;
+}
+.hero-section-lhs p.desc{
+    color: #a3a2a2;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 10px 0 20px;
+    font-family: "Poppins", serif;
+}
+.hero-cta-container{
+    display: flex;
+    gap: 20px;
+}
+.hero-cta-container a{
+    display: inline-block;
+    padding: 16px 24px;
+    font-size: 16px;
+    line-height: normal;
+    color: #0f0f0e;
+    font-weight: 500;
+    font-family: "Nunito", serif;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.hero-cta-container .primary-cta{
+    background: #fdba78;
+    border: 1px solid #fdba78;
+}
+.hero-cta-container .secondary-cta{
+    border: 1px solid #a3a2a2;
+    color: #fff;
+}
+.hero-section-rhs{
+    max-width: 310px;
+}
+.hero-section-rhs .mugesh-img{
+    box-shadow: rgba(194, 120, 23, 0.3) 0px 0px 60px 10px, rgba(0, 0, 0, 0.24) 0px 2px 7px 9px inset, rgba(0, 0, 0, 0.25) 0px 4px 8px 0px;
+    border-radius: 50%;
+}
+.social-media-container{
+    display: flex;
+    background-color: rgba(21, 21, 21, .6);
+    width: fit-content;
+    margin: -30px auto 0;
+    border-radius: 100px;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 100px;
+}
+.social-media-container a{
+    display: block;
+    padding: 9px;
+    width: 40px;
+    background-color: #262626;
+    height: 40px;
+    border-radius: 50%;
+    
+}
+.social-media-container img{
+    width: 100%;
+}
+.morquee-container{
+    margin-top: 100px;
+    display: flex;
+    overflow: hidden;
+}
+.morquee-container img{
+    animation: scroll 35s linear infinite;
+    padding-right: 40px;
+    width: 190%;
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* Selected works */
+.selected-works-wrap{
+    max-width: 1200px;
+    margin: auto
+}
+
+.selected-works-inner{
+    display: flex;
+    margin-top: 60px;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.selected-works-inner .works-card{
+    width: calc( 50% - 15px);
+    border-radius: 16px;
+    border: 4px solid #9D774F;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.selected-works-inner .works-card .card-overlay{
+    background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(33, 33, 33, 1) 100%
+    );
+    bottom: -300px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: bottom 0.3s ease;
+}
+.selected-works-inner .works-card:hover .card-overlay{
+    bottom: 0;
+}
+.selected-works-inner .works-card .card-content{
+    position: absolute;
+    padding: 0 20px 20px;
+    bottom: 0px;
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.selected-works-inner .works-card:hover .card-content{
+    opacity: 0;
+}
+.selected-works-inner .works-card .card-content h3{
+    font-family: "Poppins", serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+.selected-works-inner .works-card .card-content p{
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #A3A3A3;
+}
+.selected-works-inner .works-card:hover .arrow-icon{
+    opacity: 1;
+}
+.arrow-icon{
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    display: block;
+    width: 90px;
+    height: 90px;
+    top: 50%;   
+    left: 50%;  
+    transform: translate(-50%, -50%);
+}
+.tags-list{
+    margin: 20px;
+    position: absolute;
+    opacity: 1;
+    transition: all 0.3s ease;
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+}
+.selected-works-inner .works-card:hover .tags-list{
+    opacity: 0;
+}
+.tags-list span{
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: serif;
+    background-color: rgba(21, 21, 21, 0.6)
+}
+
+/* About me section */
+.about-section-wrapper{
+    padding: 0 20px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+.about-section-wrap{
+    max-width: 1200px;
+    margin: auto;
+}
+.about-main-container{
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+}
+.about-container-lhs{
+    max-width: 32%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-list-container{
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 16px;
+    background-color: rgb(21, 21, 21);
+    max-width: 382px;
+    width: 100%;
+}
+.experience-list{
+    padding: 14px;
+    display: flex;
+    border-radius: 8px;
+    background-color: rgb(38, 38, 38);
+    gap: 24px;
+}
+.experience-list:first-of-type{
+    border: 3px solid #B8925E;
+}
+.experience-list .duration{
+    font-family: "Nunito", serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.experience-list .company-desc{
+    max-width: 200px;
+}
+.experience-list .company{
+    font-family: "Nunito", serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.experience-list .desc{
+    font-family: "Nunito", serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(163, 163, 163);
+}
+
+.experiece-number-parent{
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+.experience-number-card{
+    background-color: rgb(21, 21, 21);
+    width: calc(50% - 10px);
+    border-radius: 16px;
+    padding: 16px;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.experience-number-card h5{
+    font-size: 14px;
+    font-family: "Nunito", serif;
+    color: rgb(163, 163, 163);
+}
+.experience-number-card p{
+    font-size: 22px;
+    font-family: "Nunito", serif;
+    font-weight: 500;
+}
+
+.about-container-rhs{
+    max-width: 66%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about-personal-detail-parent{
+    display: flex;
+    padding: 24px;
+    border-radius: 16px;
+    background-color: #B8925E;
+}
+.about-personal-detail-parent img{
+    max-width: 120px;
+    margin-right: 30px;
+}
+.about-personal-detail-parent .about-detail{
+    max-width: 350px;
+}
+.about-personal-detail-parent .about-detail h5{
+    font-size: 28px;
+    font-family: "Nunito", serif;
+    margin-bottom: 12px;
+    color: #000;
+}
+.about-personal-detail-parent .about-detail p{
+    font-size: 20px;
+    font-family: "Nunito", serif;
+    line-height: 26px;
+    color: #000;
+}
+.my-stack-container{
+    background-color: rgb(21, 21, 21);
+    border-radius: 16px;
+    padding: 32px;
+    padding-bottom: 60px;
+}
+.my-stack-container h5{
+    text-align: center;
+    font-family: "Nunito", serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: rgb(163, 163, 163);
+}
+.my-stack-morquee-container{
+    margin-top: 40px;
+}
+.my-stack-morquee{
+    overflow: hidden;
+    display: flex;
+}
+.my-stack-morquee:first-of-type{
+    margin-bottom: 25px;
+}
+.my-stack-morquee:first-of-type img{
+    margin-bottom: 25px;
+    animation: scroll 35s linear infinite;
+}
+.my-stack-morquee img{
+    width: 180%;
+    padding-right: 30px;
+    animation: scroll 35s linear infinite;
+    animation-direction: reverse;
+}
