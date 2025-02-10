@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Params.title}}</title>
+    <meta name="description" content="{{ .Params.description }}">
+    <link rel="stylesheet" href="/styles/home.css">
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Young+Serif&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+    {{ $social := .Site.Params.social }}
+    {{ partial "header.html" . }}
+    <main>
+        {{- with .Params.heroContent -}}
+            <section class="hero-section-wrapper">
+                <div class="hero-section-container">
+                    <div class="hero-section-inner">
+                        <div class="hero-section-lhs">
+                            <div class="available-tag">
+                                <img src="/images/projects/common/available.svg" alt="">
+                                <p>Available for work</p>
+                            </div>
+                            <h1>{{- .title | safeHTML -}}</h1>
+                            <p class="desc">{{- .description | safeHTML -}}</p>
+                            <div class="hero-cta-container">
+                                {{- if .primaryCtaText -}}
+                                    <a class="primary-cta" href="{{- .primaryCtaLink -}}">{{ .primaryCtaText }}</a>
+                                {{- end -}}
+                                {{- if .secondaryCtaText -}}
+                                    <a class="secondary-cta" href="{{- .secondaryCtaLink -}}">{{ .secondaryCtaText }}</a>
+                                {{- end -}}
+                            </div>
+                        </div>
+                        <div class="hero-section-rhs">
+                            <img class="mugesh-img" src="{{- .lhsImgSrc -}}" alt="">
+                            <div class="social-media-container">
+                                {{- range $social -}}
+                                    <a href="{{- .link -}}">
+                                        <img src="{{- .imgSrc -}}" alt="{{- .name -}}">
+                                    </a>
+                                {{- end -}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="morquee-container">
+                        <img src="/images/home/running-skills.png" alt="">
+                        <img src="/images/home/running-skills.png" alt="">
+                    </div>
+                </div>
+            </section>
+        {{- end -}}
+
+        {{- with .Params.selectedWorks -}}
+            <section class="selected-works-container">
+                <div class="selected-works-wrap">
+                    <h2>{{- .title -}}</h2>
+                    <div class="selected-works-inner">
+                        {{- range .cards -}}
+                            <a href="{{ . }}" class="works-card">
+                                    <img src="{{ .imgSrc }}" alt="">
+                                    <div class="card-content">
+                                        <h3>{{- .title -}}</h3>
+                                        <p>{{- .desc -}}</p>
+                                    </div>
+                                    <div class="card-overlay">
+                                    </div>
+                                    <div class="tags-list">
+                                        {{- range .tags -}}
+                                            <span>{{- . -}}</span>
+                                        {{- end -}}
+                                    </div>
+                                    <img class="arrow-icon" src="/images/projects/common/arrow.svg" alt="">
+                            </a>
+                        {{- end -}}
+                    </div>
+                </div>
+            </section>
+        {{- end -}}
+
+
+        {{- with .Params.aboutSection -}}
+            <div class="about-section-wrapper">
+                <div class="about-section-wrap">
+                    <h2>{{- .title -}}</h2>
+                    <div class="about-main-container">
+
+                        <div class="about-container-lhs">
+                            {{- with .experience -}}
+                                <div class="experience-list-container">
+                                    {{- range . -}}
+                                        <div class="experience-list">
+                                            <p class="duration">{{- .duration -}}</p>
+                                            <div class="company-desc">
+                                                <h5 class="company">{{- .company -}}</h5>
+                                                <p class="desc">{{- .desc -}}</p>
+                                            </div>
+                                        </div>
+                                    {{- end -}}
+                                </div>
+                            {{- end -}}
+                            {{- with .experienceNumber -}}
+                                <div class="experiece-number-parent">
+                                    {{ range . }}
+                                        <div class="experience-number-card">
+                                            <h5>{{- .title -}}</h5>
+                                            <p>{{- .number -}}</p>
+                                        </div>
+                                    {{ end }}
+                                </div>
+                            {{- end -}}
+                        </div>
+
+                        <div class="about-container-rhs">
+                                {{- with .detail -}}
+                                    <div class="about-personal-detail-parent">
+                                        <img src="{{- .img -}}" alt="">
+                                        <div class="about-detail">
+                                            <h5>{{- .name -}}</h5>
+                                            <p>{{- .desc -}}</p>
+                                        </div>
+                                    </div>
+                                {{- end -}}
+                                {{- with .myStack -}}
+                                    <div class="my-stack-container">
+                                        <h5>{{- .title -}}</h5>
+                                        <div class="my-stack-morquee-container">
+                                            <div class="my-stack-morquee">
+                                                <img src="{{- .stack1 -}}" alt="">
+                                                <img src="{{- .stack1 -}}" alt="">
+                                            </div>
+                                            <div class="my-stack-morquee">
+                                                <img src="{{- .stack2 -}}" alt="">
+                                                <img src="{{- .stack2 -}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{- end -}}
+                            </div>
+
+
+                    </div>
+                </div>
+            </div>
+        {{- end -}}
+    </main>
+</body>
+</html>

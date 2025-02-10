@@ -1,0 +1,85 @@
+<div class="header-container-wrap">
+    <div class="header-container">
+        <div class="header-lhs">
+            <a class="home-icon" href="#"><img src="/images/header/home.svg" alt=""></a>
+            <div class="header-links">
+                <a href="">Works</a>
+                <a href="">About</a>
+                <a href="">Content</a>
+            </div>
+        </div>
+        <div class="header-rhs">
+            <div class="social-header-icons">
+                {{ range .Site.Params.social}}
+                <a href="{{.link}}"><img src="{{.imgSrc}}" alt=""></a>
+                {{ end }}
+            </div>
+            <a class="header-cta" href="#">Lets bang!!</a>
+        </div>
+    </div>
+</div>
+<style>
+    .header-container-wrap{
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+    .header-container{
+        max-width: 1200px;
+        border-radius: 20px;
+        background-color: rgba(21, 21, 21, .6);
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-lhs{
+        display: flex;
+        gap: 50px;
+        align-items: center;
+    }
+    .home-icon{
+        width: 40px;
+    }
+    .header-links{
+        display: flex;
+        gap: 16px;
+    }
+    .header-links a{
+        text-decoration: none;
+        font-family: "Nunito", serif;
+        font-size: 18px;
+        color: rgb(163, 163, 163);
+        transition: all 0.3s ease;
+    }
+    .header-links a:hover{
+        color: #fff;
+    }
+
+    .header-rhs{
+        display: flex;
+        gap: 48px;
+    }
+    .social-header-icons{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .social-header-icons a{
+        display: block;
+        padding: 9px;
+        width: 40px;
+        background-color: #262626;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .header-cta{
+        text-decoration: none;
+        text-decoration: none;
+        font-family: "Nunito", serif;
+        font-size: 16px;
+        color: #000;
+        padding: 14px 20px;
+        background: #fff;
+        border-radius: 6px;
+    }
+</style>

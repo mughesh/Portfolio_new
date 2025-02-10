@@ -1,0 +1,18 @@
+baseURL: 'https://mugesh.com/'
+languageCode: 'en-gb'
+title: 'Mugesh portfolio'
+disableKinds: 
+  - 'taxonomy'
+  - 'term'
+
+params:
+  social:
+    - name: x
+      link: www.x.com
+      imgSrc: /images//socials-icon/linkedin.svg
+    - name: linkedin
+      link: www.x.com
+      imgSrc: /images/socials-icon/github.svg
+    - name: github
+      link: www.x.com
+      imgSrc: /images//socials-icon/insta.svg
